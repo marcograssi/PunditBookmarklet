@@ -1,0 +1,9 @@
+{
+  "name": "punditextension",
+  "fullName": "PunditExtension",
+  "id": "jid1-zhBYPAOMytLjmw",
+  "description": "A Pundit extension for Firefox",
+  "author": "Marco Grassi, Michele Nucci, Susanna Martinelli",
+  "license": "",
+  "version": "0.1"
+}

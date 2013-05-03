@@ -1,7 +1,0 @@
-content	PunditExtension	content/
-overlay	chrome://browser/content/browser.xul	chrome://PunditExtension/content/overlay.xul
-
-locale	PunditExtension	en-US	locale/en-US/
-
-skin	PunditExtension	classic/1.0	skin/
-style	chrome://global/content/customizeToolbar.xul	chrome://PunditExtension/skin/overlay.css
