@@ -1,0 +1,19 @@
+{
+  "name": "Pundit Extension.",
+  "version": "1.1",
+  "background": { "scripts": ["background.js"] },
+  "permissions": [
+    "tabs", "http://*/*", "background"
+  ],
+  "browser_action": {
+      "name": "Click to change the icon's color"
+
+  },
+  "content_scripts": [
+     {
+       "matches": ["<all_urls>"],
+       "js": ["launcher.js"]
+      }
+  ],
+  "manifest_version": 2
+}
