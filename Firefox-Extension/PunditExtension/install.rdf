@@ -4,15 +4,15 @@
 
   <Description about="urn:mozilla:install-manifest">
   
-    <em:id>helloworld@mozilla.doslash.org</em:id>
-    <em:name>Hello World extension for Firefox</em:name>
-    <em:version>1.0</em:version>
+    <em:id>PunditExtension@mozilla.doslash.org</em:id>
+    <em:name>Pundit Extension for Firefox</em:name>
+    <em:version>1.1</em:version>
     <em:description>Demo extension.</em:description>
-    <em:creator>Nickolay Ponomarev</em:creator>
+    <em:creator>Marco Grassi, Michele Nucci, Susanna Martinelli</em:creator>
     <!-- optional items -->
-    <em:contributor>A person who helped you</em:contributor>
-    <em:contributor>Another one</em:contributor>
-    <em:homepageURL>http://kb.mozillazine.org/Getting_started_with_extension_development</em:homepageURL>
+    <!-- <em:contributor>A person who helped you</em:contributor> -->
+    <!-- <em:homepageURL>http://kb.mozillazine.org/Getting_started_with_extension_development</em:homepageURL> -->
+    
     <!--em:optionsURL>chrome://sampleext/content/settings.xul</em:optionsURL>
     <em:aboutURL>chrome://sampleext/content/about.xul</em:aboutURL>
     <em:iconURL>chrome://sampleext/skin/mainicon.png</em:iconURL>
