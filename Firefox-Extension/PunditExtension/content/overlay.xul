@@ -7,6 +7,6 @@
 
   <menupopup id="menu_ToolsPopup">
     <menuitem id="helloworld-hello" label="&helloworld;" 
-              oncommand="HelloWorld.onMenuItemCommand(event);"/>
+              oncommand="Pundit.onMenuItemCommand(event);"/>
   </menupopup>
 </overlay>
