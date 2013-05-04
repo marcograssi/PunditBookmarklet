@@ -34,16 +34,18 @@ function addToolbarButton() {
 	btn.setAttribute('orient', 'horizontal');
 	// this text will be shown when the toolbar is set to text or text and iconss
 	btn.setAttribute('label', 'My Button');
-	btn.addEventListener('click', function() {
-		if (!punditLoaded) {
-			punditLoaded = true;
-			loadPundit();
-			tabs.on("ready", loadPundit);
-			this.setAttribute('image', data.url('img/icon-on.png'));
-		} else {
-			punditLoaded = false;
-			// tabs.on("ready", null);
-			this.setAttribute('image', data.url('img/icon-off.png'));
+	btn.addEventListener('mousedown', function(ev) {
+		if (ev.button === 0) {
+			if (!punditLoaded) {
+				punditLoaded = true;
+				loadPundit();
+				tabs.on("ready", loadPundit);
+				this.setAttribute('image', data.url('img/icon-on.png'));
+			} else {
+				punditLoaded = false;
+				// tabs.on("ready", null);
+				this.setAttribute('image', data.url('img/icon-off.png'));
+			}
 		}
 	}, false)
 	navBar.appendChild(btn);
