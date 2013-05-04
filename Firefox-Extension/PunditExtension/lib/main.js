@@ -3,6 +3,7 @@ var self = require("sdk/self");
 var data = require('self').data;
 var {Cc, Ci} = require('chrome');
 var tabs = require("sdk/tabs");
+var sp = require("sdk/simple-prefs");
 var mediator = Cc['@mozilla.org/appshell/window-mediator;1'].getService(Ci.nsIWindowMediator);
 var punditLoaded = false;
  
@@ -33,8 +34,9 @@ function addToolbarButton() {
 	btn.setAttribute('image', data.url('img/icon-off.png'));
 	btn.setAttribute('orient', 'horizontal');
 	// this text will be shown when the toolbar is set to text or text and iconss
-	btn.setAttribute('label', 'My Button');
+	btn.setAttribute('label', 'My Button');	
 	btn.addEventListener('mousedown', function(ev) {
+		console.log(this.getAttribute('context'));
 		if (ev.button === 0) {
 			if (!punditLoaded) {
 				punditLoaded = true;
@@ -49,6 +51,19 @@ function addToolbarButton() {
 		}
 	}, false)
 	navBar.appendChild(btn);
+
+	sp.on("customSettings", function() {
+		console.log("Testalo");
+
+		var panel = require("sdk/panel").Panel({
+			width: 400,
+			height: 400,
+			contentURL: data.url("settings.html"),
+  			contentScriptFile: data.url("getSettings.js")
+		});
+
+		panel.show();
+	});
 }
 
 function loadPundit() {

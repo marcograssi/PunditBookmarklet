@@ -2,8 +2,16 @@
   "name": "punditextension",
   "fullName": "PunditExtension",
   "id": "jid1-zhBYPAOMytLjmw",
-  "description": "A Pundit extension for Firefox",
-  "author": "Marco Grassi, Michele Nucci, Susanna Martinelli",
+  "description": "A Pundit addon for Firefox.",
+  "author": "Michele Nucci, Marco Grassi, Susanna Martinelli",
   "license": "",
-  "version": "0.1"
+  "version": "0.1",
+  "preferences": [
+  	{
+  		"type": "control",
+  		"label": "Settings",
+  		"name": "customSettings",
+  		"title": "Custom Settings"
+  	}
+  ]
 }
