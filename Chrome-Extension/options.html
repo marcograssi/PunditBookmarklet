@@ -1,0 +1,51 @@
+<html>
+<head>
+	<title>Pundit Extension Options</title>
+	<style>
+		body{
+			font-family: Verdana;
+		}
+		span.title{
+			font-weight: bold;
+		}
+	</style>
+</head>
+
+<body style="width:900px;margin-left:auto;margin-right:auto;">
+<div id="header" style="margin-bottom:20px;">
+	<img width="250" style: src="http://thepund.it/assets/img/pundit.png">
+</div>
+
+<div>
+	<span class="title">Selected Bookmarklet:</span>
+	<select id="bookmarklet">
+	 <option value="http://metasound.dibet.univpm.it/release_bot/release/semlib-client_0.13.3-Pumpkin/src/InitBookmarklet.js" selected>semlib-client_0.13.3-Pumpkin</option>
+	 <option value="http://metasound.dibet.univpm.it/release_bot/release/semlib-client_0.15-HatchedEgg/src/InitBookmarklet.js">semlib-client_0.15-HatchedEggs</option>
+	</select>
+</div>
+<br>
+<div>
+	<span class="title" style="display:block">Add bookmarklet:</span>
+	<input id="bookmarkletInput" type="text" placeholder="" value="" style="width:400px"/>
+	<button id="addBookmarklet">Add</button>
+	<ul id="bookmarkletList" style="background:lightgrey;min-height:5px;width: 405px;">
+	</ul>
+</div>
+
+<div>
+	<input type="checkbox" name="vehicle" value="" style="display:inline"><span class="title">Launch only on:</span>
+	
+	<ul id="regexList" style="background:lightgrey;min-height:5px;width: 405px;">
+	</ul>
+	<input id="regexInput" type="text" value="" style="width:400px"/>
+	<button id="addRegex">Add</button>
+</div>
+
+<br>
+<div id="status"></div>
+<button id="save">Save</button>
+</body>
+
+<script src="options.js"></script>
+
+</html>

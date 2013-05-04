@@ -15,5 +15,6 @@
        "js": ["launcher.js"]
       }
   ],
+  "options_page": "options.html",
   "manifest_version": 2
 }
