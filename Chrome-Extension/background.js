@@ -5,8 +5,6 @@ var max = 2;
 var state = 1;
 var current = 1;
 
-console.log(localStorage["regexs"]);
-
 function updateIcon() {
   chrome.browserAction.setIcon({path:"punditExtensionLogo" + current + ".png"});
   state = current;
@@ -25,16 +23,17 @@ chrome.browserAction.onClicked.addListener(function(){
 updateIcon();
 
 chrome.extension.onMessage.addListener(
-  function(request, sender, sendResponse) {
-    if (request === "state")
-      sendResponse(state);
-    if (request === "options"){
-      var options = {
-        regex : localStorage["regexs"],
-        bookmarkletUri: localStorage['bookmarkletUri'],
-        useRegex: localStorage["useRegex"]
-      }
-    }
-      sendResponse(localStorage["regexs"]);
-  });
+    function(request, sender, sendResponse) {
+        if (request === "state")
+            sendResponse(state);
+
+        if (request === "options"){
+            var options = {
+                regexs : localStorage["regexs"],
+                bookmarkletUri: localStorage['bookmarkletUri'],
+                useRegex: localStorage["useRegex"]
+            };
+            sendResponse(options);
+        }  
+    });
 
