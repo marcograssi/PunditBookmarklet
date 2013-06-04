@@ -5,10 +5,10 @@ var punditState = 'pageLoading',
 window.onload = function(){
     console.log('Page Loaded');
     var option;
-    chrome.extension.sendMessage("options", function(response) {
+    chrome.extension.sendMessage(JSON.stringify({"command":"options"}), function(response) {
         options = response;
     });
-    chrome.extension.sendMessage("state", function(response) {
+    chrome.extension.sendMessage(JSON.stringify({"command":"state"}), function(response) {
         if (response === 2){
             var isValidURL = true;
             if (options.useRegex === "true"){
@@ -51,7 +51,8 @@ window.onload = function(){
 
 chrome.extension.onMessage.addListener(
     function(request, sender, sendResponse) {
-        if (request === 'toggleState'){
+        var r = JSON.parse(request);
+        if (r.command === 'toggleState'){
             if ((typeof document.getElementById('pundit-gui') !== 'undefined') && (document.getElementById('pundit-gui') !== null)){
                 console.log('Pundit already loaded');
                 return;
@@ -71,6 +72,10 @@ chrome.extension.onMessage.addListener(
                 console.log('Pundit Loaded');
             }
 
+        }
+        if (r.command === 'navigate'){
+            console.log(r.url);
+            window.location.href = r.url;
         }
     }
 );

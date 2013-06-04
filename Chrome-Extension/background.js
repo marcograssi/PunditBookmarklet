@@ -17,17 +17,18 @@ chrome.browserAction.onClicked.addListener(function(){
   updateIcon();
   
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
-      chrome.tabs.sendMessage(tabs[0].id, 'toggleState', function(response) {}); 
+      chrome.tabs.sendMessage(tabs[0].id, JSON.stringify({"command": "toggleState"}), function(response) {}); 
   });
 });
 updateIcon();
 
 chrome.extension.onMessage.addListener(
     function(request, sender, sendResponse) {
-        if (request === "state")
+        var r = JSON.parse(request);
+        if (r.command === "state")
             sendResponse(state);
 
-        if (request === "options"){
+        if (r.command === "options"){
             var options = {
                 regexs : localStorage["regexs"],
                 bookmarkletUri: localStorage['bookmarkletUri'],
@@ -36,4 +37,3 @@ chrome.extension.onMessage.addListener(
             sendResponse(options);
         }  
     });
-

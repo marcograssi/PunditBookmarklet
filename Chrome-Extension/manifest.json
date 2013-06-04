@@ -1,13 +1,16 @@
 {
   "name": "Pundit Extension.",
-  "version": "1.1",
-  "background": { "scripts": ["background.js"] },
+  "version": "1.0",
+  "background": { "scripts": ["background.js", "contextMenu.js"]},
   "permissions": [
-    "tabs", "http://*/*", "background"
+    "contextMenus", "tabs", "http://*/*", "background"
   ],
   "browser_action": {
       "name": "Click to change the icon's color"
 
+  },
+  "icons": {
+    "16": "punditExtensionLogo2.png"
   },
   "content_scripts": [
      {
